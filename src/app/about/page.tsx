@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, Transition } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
@@ -10,7 +10,7 @@ const fadeInUp: Variants = {
   whileInView: { opacity: 1, y: 0 }
 };
 
-const transitionProps = { duration: 0.8, ease: "easeOut" };
+const transitionProps: Transition = { duration: 0.8, ease: "easeOut" };
 
 export default function AboutPage() {
   return (
