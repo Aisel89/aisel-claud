@@ -1,0 +1,48 @@
+
+> studio@0.1.0 build
+> next build
+
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.1s
+  Running TypeScript ...
+  Finished TypeScript in 7.0s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/26) ...
+  Generating static pages using 3 workers (6/26)
+  Generating static pages using 3 workers (12/26)
+  Generating static pages using 3 workers (19/26)
+✓ Generating static pages using 3 workers (26/26) in 688ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /admin
+├ ○ /admin/blog
+├ ○ /admin/classes
+├ ○ /admin/gallery
+├ ○ /admin/login
+├ ○ /admin/pricing
+├ ○ /admin/retreats
+├ ○ /admin/schedule
+├ ○ /admin/testimonials
+├ ○ /admin/videos
+├ ○ /blog
+├ ƒ /blog/[slug]
+├ ○ /classes
+├ ○ /contact
+├ ○ /faq
+├ ○ /gallery
+├ ○ /pricing
+├ ○ /private-sessions
+├ ○ /retreats
+├ ○ /schedule
+├ ○ /testimonials
+└ ○ /videos
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
