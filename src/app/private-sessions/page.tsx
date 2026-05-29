@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { Heart, Sparkles, Target, Zap, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
@@ -22,7 +22,7 @@ export default function PrivateSessionsPage() {
         <Container className="relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-20 lg:gap-32">
             <div className="w-full md:w-1/2">
-              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{  duration: 1  } as Transition}>
                 <span className="text-xs font-bold uppercase tracking-[0.4em] text-brand-sage mb-6 block">Personalized Practice</span>
                 <h1 className="text-5xl md:text-8xl font-serif mb-10 leading-tight">Guided <br/><span className="italic text-brand-sage/80">for You</span></h1>
                 <p className="text-2xl text-brand-stone/70 mb-12 leading-relaxed font-light">
@@ -38,7 +38,7 @@ export default function PrivateSessionsPage() {
               <motion.div
                  initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                 transition={{ duration: 1.2, ease: "easeOut" }}
+                 transition={{  duration: 1.2, ease: "easeOut"  } as Transition}
                  className="relative"
               >
                 <div className="absolute -inset-4 border border-brand-sage/10 rounded-[3.5rem] translate-x-4 translate-y-4 -z-10" />
@@ -75,7 +75,7 @@ export default function PrivateSessionsPage() {
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{  delay: idx * 0.1  } as Transition}
                 viewport={{ once: true }}
                 className="bg-white p-10 rounded-[2.5rem] border border-brand-beige shadow-sm hover:shadow-xl transition-all duration-500 group"
               >

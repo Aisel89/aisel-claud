@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { useGallery } from "@/hooks/usePersistence";
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { AnimatePresence, Transition, Variants, motion } from "framer-motion";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
@@ -59,7 +59,7 @@ export default function GalleryPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ delay: idx * 0.05 }}
+                transition={{  delay: idx * 0.05  } as Transition}
                 className="group relative aspect-square bg-brand-beige rounded-[2.5rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500"
                 onClick={() => setSelectedImage(img.url)}
               >

@@ -6,7 +6,7 @@ import { useBlog } from "@/hooks/usePersistence";
 import { ArrowLeft, Calendar, User, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { motion } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 
 export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -27,7 +27,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     <div className="pt-24 min-h-screen">
       <Section className="pb-8">
         <Container>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{  duration: 1  } as Transition}>
             <Link href="/blog" className="inline-flex items-center gap-3 text-brand-stone/40 hover:text-brand-sage mb-12 transition-colors text-xs font-bold uppercase tracking-widest group">
               <ArrowLeft size={16} className="group-hover:-translate-x-2 transition-transform" /> Back to Journal
             </Link>
@@ -51,7 +51,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         <motion.div
            initial={{ opacity: 0, y: 40 }}
            animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 1, delay: 0.2 }}
+           transition={{  duration: 1, delay: 0.2  } as Transition}
            className="aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl relative"
         >
           <img

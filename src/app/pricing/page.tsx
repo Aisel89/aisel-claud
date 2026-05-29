@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { usePricing } from "@/hooks/usePersistence";
 import { Check, CreditCard, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
@@ -19,7 +19,7 @@ export default function PricingPage() {
       <Section variant="sage" className="text-center pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-sage opacity-50" />
         <Container className="relative z-10">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}>
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{  duration: 1  } as Transition}>
             <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/60 mb-6 block">Your Investment</span>
             <h1 className="text-5xl md:text-8xl font-serif mb-8 text-white">Memberships & <span className="italic text-white/80">Pricing</span></h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
@@ -37,7 +37,7 @@ export default function PricingPage() {
                 key={plan.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                transition={{  delay: idx * 0.1, duration: 0.8  } as Transition}
                 viewport={{ once: true }}
                 className={`relative bg-white p-10 md:p-12 rounded-[3rem] border-2 transition-all hover:shadow-2xl flex flex-col ${
                   plan.isPopular ? "border-brand-sage shadow-xl scale-105 z-10" : "border-brand-beige"

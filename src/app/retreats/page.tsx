@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { useRetreats } from "@/hooks/usePersistence";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
@@ -23,7 +23,7 @@ export default function RetreatsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{  duration: 1  } as Transition}
           >
             <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/80 mb-6 block">Beyond the Studio</span>
             <h1 className="text-5xl md:text-8xl font-serif mb-8 text-white">Retreats & <br /><span className="italic">Sacred Circles</span></h1>
@@ -42,7 +42,7 @@ export default function RetreatsPage() {
                 key={retreat.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
+                transition={{  duration: 1  } as Transition}
                 viewport={{ once: true }}
                 className="bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-brand-beige flex flex-col lg:flex-row"
               >
@@ -107,7 +107,7 @@ export default function RetreatsPage() {
             whileInView="whileInView"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-6xl font-serif mb-10">Women's Circles</h2>

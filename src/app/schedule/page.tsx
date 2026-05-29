@@ -6,7 +6,7 @@ import { Calendar as CalendarIcon, MapPin, User, Clock } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 
@@ -28,7 +28,7 @@ export default function SchedulePage() {
     <div className="pt-24 min-h-screen">
       <Section variant="beige" className="text-center pb-12">
         <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{  duration: 0.8  } as Transition}>
             <h1 className="text-4xl md:text-6xl font-serif mb-6">Class Schedule</h1>
             <p className="text-brand-stone/60 max-w-2xl mx-auto text-lg">
               Find the perfect time for your practice. From sunrise flows to evening meditations.
@@ -65,7 +65,7 @@ export default function SchedulePage() {
                   variants={fadeInUp}
                   initial="initial"
                   whileInView="whileInView"
-                  transition={{ delay: idx * 0.1 }}
+                  transition={{  delay: idx * 0.1  } as Transition}
                   viewport={{ once: true }}
                   className="bg-white p-6 md:p-10 rounded-[2rem] border border-brand-beige flex flex-col md:flex-row md:items-center justify-between gap-8 hover:shadow-xl hover:shadow-brand-sage/5 transition-all"
                 >
