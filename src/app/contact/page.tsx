@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, Transition, Variants, motion } from "framer-motion";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");

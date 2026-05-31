@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { useBlog } from "@/hooks/usePersistence";
 import Link from "next/link";
 import { ArrowRight, Calendar, Sparkles } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
@@ -36,7 +36,7 @@ export default function BlogPage() {
                 key={post.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                transition={{  delay: idx * 0.1, duration: 0.8  } as Transition}
                 viewport={{ once: true }}
               >
                 <Link href={`/blog/${post.slug}`} className="group block">

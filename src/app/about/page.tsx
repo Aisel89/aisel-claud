@@ -1,16 +1,10 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-
-const fadeInUp: Variants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 }
-};
-
-const transitionProps = { duration: 0.8, ease: "easeOut" };
+import { fadeInUp, transitionProps } from "@/lib/animations";
 
 export default function AboutPage() {
   return (
@@ -26,11 +20,11 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] } as Transition}
               className="w-full md:w-1/2"
             >
               <div className="relative">
-                <div className="absolute -inset-4 border border-brand-sage/20 rounded-[3rem] translate-x-4 translate-y-4" />
+                <div className="absolute -inset-4 border border-brand-sage/20 rounded-[3rem] translate-x-4 translate-y-4 -z-10" />
                 <div className="aspect-[3/4] bg-brand-beige rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
                   <img
                     src="https://images.unsplash.com/photo-1594759844614-3c277bc0bd5a?auto=format&fit=crop&q=80"
@@ -47,7 +41,7 @@ export default function AboutPage() {
                 whileInView="whileInView"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                transition={transitionProps}
+                transition={transitionProps as Transition}
               >
                 <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-sage mb-6 block">Our Story</span>
                 <h1 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">Meet <span className="italic">Aisel</span></h1>
@@ -80,7 +74,7 @@ export default function AboutPage() {
             whileInView="whileInView"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={transitionProps}
+            transition={transitionProps as Transition}
             className="text-center mb-24 max-w-3xl mx-auto"
           >
             <h2 className="text-4xl md:text-6xl font-serif mb-8 text-brand-stone">The Studio <span className="italic">Philosophy</span></h2>
@@ -111,7 +105,7 @@ export default function AboutPage() {
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.2, duration: 1, ease: "easeOut" }}
+                transition={{ delay: idx * 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] } as Transition}
                 viewport={{ once: true }}
                 className="group"
               >

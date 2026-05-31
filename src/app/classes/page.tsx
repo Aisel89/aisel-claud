@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { useClasses } from "@/hooks/usePersistence";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -26,7 +26,7 @@ export default function ClassesPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{  duration: 1  } as Transition}
           >
              <h1 className="text-5xl md:text-7xl font-serif mb-6">Our <span className="italic">Practices</span></h1>
              <p className="text-xl text-brand-stone/60 max-w-2xl mx-auto font-light">
@@ -44,7 +44,7 @@ export default function ClassesPage() {
                 key={cls.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.1 }}
+                transition={{  duration: 1, delay: 0.1  } as Transition}
                 viewport={{ once: true, margin: "-100px" }}
                 className={`flex flex-col ${idx % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-16 md:gap-24`}
               >
@@ -98,7 +98,7 @@ export default function ClassesPage() {
             whileInView="whileInView"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
             className="mt-32 bg-brand-cream/50 p-12 md:p-20 rounded-[3rem] text-center border border-brand-beige"
           >
             <Sparkles className="text-brand-sage mx-auto mb-8" size={32} />

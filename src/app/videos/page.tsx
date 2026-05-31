@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { useVideos } from "@/hooks/usePersistence";
 import { Play, Clock, Sparkles } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { AnimatePresence, Transition, Variants, motion } from "framer-motion";
 
 const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
@@ -19,7 +19,7 @@ export default function VideosPage() {
     <div className="pt-24 min-h-screen">
       <Section variant="beige" className="pb-20 text-center relative overflow-hidden">
         <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{  duration: 1  } as Transition}>
             <span className="text-xs font-bold uppercase tracking-[0.4em] text-brand-sage mb-6 block">Online Practice</span>
             <h1 className="text-5xl md:text-8xl font-serif mb-8 leading-tight">Video <span className="italic">Library</span></h1>
             <p className="text-xl text-brand-stone/60 max-w-2xl mx-auto font-light leading-relaxed">
@@ -37,7 +37,7 @@ export default function VideosPage() {
                 key={video.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                transition={{  delay: idx * 0.1, duration: 0.8  } as Transition}
                 viewport={{ once: true }}
                 className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-beige hover:shadow-2xl hover:shadow-brand-sage/5 transition-all duration-500"
               >

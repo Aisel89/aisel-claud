@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Wind, Heart, Users, Sparkles } from "lucide-react";
@@ -27,7 +27,7 @@ export default function Home() {
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{  duration: 1.5, ease: "easeOut"  } as Transition}
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80')] bg-cover bg-center"
         >
           <div className="absolute inset-0 bg-brand-cream/30 backdrop-blur-[1px]" />
@@ -37,7 +37,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            transition={{  duration: 1, delay: 0.5, ease: "easeOut"  } as Transition}
           >
             <div className="flex items-center justify-center gap-2 mb-6 text-brand-sage">
               <Sparkles size={18} />
@@ -68,7 +68,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
+          transition={{  delay: 1.5, duration: 1  } as Transition}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-[10px] uppercase tracking-[0.2em] text-brand-stone/40">Scroll to Explore</span>
@@ -86,7 +86,7 @@ export default function Home() {
             whileInView="whileInView"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl mb-6 font-serif">Core Practices</h2>
@@ -125,7 +125,7 @@ export default function Home() {
               <motion.div
                 key={item.title}
                 variants={fadeInUp}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
                 className="group bg-white p-10 rounded-[2.5rem] border border-brand-beige hover:border-brand-sage/30 hover:shadow-2xl hover:shadow-brand-sage/5 transition-all duration-500"
               >
                 <div className={`mb-8 w-16 h-16 rounded-2xl ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
@@ -149,7 +149,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
+              transition={{  duration: 1  } as Transition}
               viewport={{ once: true }}
               className="w-full md:w-1/2"
             >
@@ -167,7 +167,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
+              transition={{  duration: 1  } as Transition}
               viewport={{ once: true }}
               className="w-full md:w-1/2"
             >
@@ -206,7 +206,7 @@ export default function Home() {
             whileInView="whileInView"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
           >
             <div className="text-6xl md:text-8xl text-white/40 font-serif mb-8 leading-none italic">“</div>
             <div className="max-w-4xl mx-auto">
@@ -230,7 +230,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{  duration: 0.8, ease: "easeOut"  } as Transition}
             className="bg-brand-beige/50 pt-20 px-8 rounded-[3rem] text-center border border-brand-beige overflow-hidden"
           >
             <div className="max-w-3xl mx-auto mb-16">

@@ -3,7 +3,7 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Sparkles } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, Transition, Variants, motion } from "framer-motion";
 
 const FAQS = [
   {
@@ -53,7 +53,7 @@ export default function FAQPage() {
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{  delay: idx * 0.1  } as Transition}
                 viewport={{ once: true }}
                 className="border border-brand-beige rounded-[2rem] overflow-hidden bg-white shadow-sm hover:shadow-xl hover:shadow-brand-sage/5 transition-all duration-500"
               >

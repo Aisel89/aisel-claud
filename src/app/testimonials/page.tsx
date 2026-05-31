@@ -3,7 +3,7 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { usePersistence } from "@/hooks/usePersistence";
 import { Quote, Sparkles } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { Transition, Variants, motion } from "framer-motion";
 import { Testimonial } from "@/data/mockData";
 
 const fadeInUp: Variants = {
@@ -18,7 +18,7 @@ export default function TestimonialsPage() {
     <div className="pt-24 min-h-screen">
       <Section variant="sage" className="text-center pb-20 relative overflow-hidden">
         <Container className="relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{  duration: 1  } as Transition}>
             <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/60 mb-6 block">Our Community</span>
             <h1 className="text-5xl md:text-8xl font-serif mb-8 text-white">Student <span className="italic text-white/80">Voices</span></h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
@@ -36,7 +36,7 @@ export default function TestimonialsPage() {
                 key={t.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                transition={{  delay: idx * 0.1, duration: 0.8  } as Transition}
                 viewport={{ once: true }}
                 className="bg-brand-cream/50 p-12 md:p-16 rounded-[3.5rem] relative border border-brand-beige shadow-sm hover:shadow-2xl hover:shadow-brand-sage/5 transition-all duration-700"
               >
